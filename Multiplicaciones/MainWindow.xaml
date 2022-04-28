@@ -1,0 +1,102 @@
+﻿<Window x:Class="Multiplicaciones.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Multiplicaciones"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="Multiplica multiplica 3000" Height="400" Width="800">
+
+    <Window.Resources>
+        <local:VisibilityConverter x:Key="VisibilityConverter" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="150" />
+            <RowDefinition />
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label x:Name="Portada"
+               Grid.RowSpan="2" Grid.ColumnSpan="4" 
+               FontSize="40" VerticalAlignment="Center"/>
+
+        <Label x:Name="TimeLabel" Content="00:00"
+               Grid.Row="1" Grid.Column="4"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               FontSize="20" Padding="0"/>
+
+        <Grid Grid.Column="5" Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Image Width="48"
+                   Margin="1"
+                   Source="C:\Users\Alberto\Downloads\vida.jpg"
+                   Visibility="{ Binding Vida1, Converter={StaticResource VisibilityConverter}}" />
+            <Image Width="48"
+                   Margin="1"
+                   Grid.Column="1"
+                   Source="C:\Users\Alberto\Downloads\vida.jpg"
+                   Visibility="{ Binding Vida2, Converter={StaticResource VisibilityConverter}}" />
+            <Image Width="48"
+                   Margin="1"
+                   Grid.Column="2"
+                   Source="C:\Users\Alberto\Downloads\vida.jpg"
+                   Visibility="{ Binding Vida3, Converter={StaticResource VisibilityConverter}}" />
+        </Grid>
+
+        <Label Grid.Row="2"
+               Grid.ColumnSpan="2"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               Content="Hazme esta multiplicación anda!" FontSize="18"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="60"
+                   Text="{Binding ParaMultiplicar}" />
+        <TextBox x:Name="RestTextBox" 
+                 Grid.Row="2" Grid.Column="3" FontSize="110" Margin="5"
+                 PreviewTextInput="RestTextBox_PreviewTextInput"
+                 KeyUp="TextBox_KeyUp" />
+        <Button Grid.Row="2"
+                Grid.Column="4"
+                Content="COMPROBAR"
+                Command="{Binding CheckCommand}" Margin="5" />
+
+        <TextBox Grid.Row="3" Margin="10" VerticalScrollBarVisibility="Auto"
+                 Grid.RowSpan="2" Text="{Binding LoQueLlevas}" />
+        <Label Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"
+               Content="Llevas BIEN seguidos:" />
+        <Label Grid.Row="3"
+               Grid.Column="2"
+               VerticalAlignment="Center"
+               Content="{Binding Racha}" />
+
+        <Label Grid.Row="3"
+               Grid.Column="3"
+               VerticalAlignment="Center"
+               Content="Total:" />
+        <Label Grid.Row="3"
+               Grid.Column="4"
+               VerticalAlignment="Center"
+               Content="{Binding Total}" />
+
+        <Label Grid.Row="4"
+               Grid.Column="3"
+               Content="Mejor tiempo:" />
+        <Label Grid.Row="4"
+               Grid.Column="4"
+               Content="{Binding Best}" />
+    </Grid>
+</Window>
