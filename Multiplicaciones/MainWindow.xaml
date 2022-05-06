@@ -44,17 +44,17 @@
             </Grid.ColumnDefinitions>
             <Image Width="48"
                    Margin="1"
-                   Source="C:\Users\Alberto\Downloads\vida.jpg"
+                   Source="vidaIcon.png"
                    Visibility="{ Binding Vida1, Converter={StaticResource VisibilityConverter}}" />
             <Image Width="48"
                    Margin="1"
                    Grid.Column="1"
-                   Source="C:\Users\Alberto\Downloads\vida.jpg"
+                   Source="vidaIcon.png"
                    Visibility="{ Binding Vida2, Converter={StaticResource VisibilityConverter}}" />
             <Image Width="48"
                    Margin="1"
                    Grid.Column="2"
-                   Source="C:\Users\Alberto\Downloads\vida.jpg"
+                   Source="vidaIcon.png"
                    Visibility="{ Binding Vida3, Converter={StaticResource VisibilityConverter}}" />
         </Grid>
 

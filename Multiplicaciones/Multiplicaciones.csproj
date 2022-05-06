@@ -104,5 +104,10 @@
   <ItemGroup>
     <Resource Include="85529-allies-kirby-text-symbol-star-super_64x64.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="vidaIcon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
